@@ -11,7 +11,6 @@ datagroup: intento1_default_datagroup {
 persist_with: intento1_default_datagroup
 
 explore: biblioteca_datos {
-  fields: [codigo_biblioteca,fecha_date, anio_registro_usuario_sistema]
   description: "no quiero"
 }
 
