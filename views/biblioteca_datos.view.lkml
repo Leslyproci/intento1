@@ -6,7 +6,9 @@ view: biblioteca_datos {
     type: number
     sql: ${TABLE}.Anio_registro_usuario_sistema ;;
   }
+dimension: intento {
 
+}
   dimension: biblioteca_consulta {
     type: string
     sql: ${TABLE}.Biblioteca_consulta ;;
@@ -55,6 +57,16 @@ view: biblioteca_datos {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Fecha ;;
+  }
+  dimension: fecha_days {
+    type: number
+    sql: DATEDIFF(day, ${fecha_date}  ,${fecha_year});;
+  }
+  dimension_group: fecha_day {
+    type: duration
+    sql_start: ${fecha_days};;
+    sql_end: ${fecha_days};;
+    intervals: [day]
   }
 
   dimension: georeferencia {
