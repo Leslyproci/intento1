@@ -4,14 +4,14 @@ connection: "biblioteca"
 include: "/views/**/*.view"
 
 datagroup: intento1_default_datagroup {
-  sql_trigger: SELECT MAX(id) FROM etl_log;;
+  #sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
 persist_with: intento1_default_datagroup
 
 explore: biblioteca_datos {
-  fields: [biblioteca_consulta,codigo_biblioteca,fecha_date]
+  fields: [codigo_biblioteca,fecha_date, anio_registro_usuario_sistema]
   description: "no quiero"
 }
 
