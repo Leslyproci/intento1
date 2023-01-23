@@ -13,6 +13,9 @@ persist_with: intento1_default_datagroup
 explore: biblioteca_datos {
   fields: [biblioteca_datos.item, biblioteca_datos.departamento,biblioteca_datos.cantidad_consultas]
   description: "no quiero"
+  always_filter: {
+    filters: [biblioteca_datos.departamento: "BOYACA"]
+  }
 }
 
 explore: datos_biblioteca {}
