@@ -58,7 +58,34 @@ dimension: intento {
     datatype: date
     sql: ${TABLE}.Fecha ;;
   }
+  parameter: dates_granularity {
+    hidden: yes
+    type: unquoted
+    allowed_value: { label: "Date" value: "date" }
+    allowed_value: { label: "Week" value: "week" }
+    allowed_value: { label: "Month" value: "month" }
+    allowed_value: { label: "Quarter" value: "quarter" }
+    allowed_value: { label: "Year" value: "year" }
+    allowed_value: {label: "Raw" value:"raw"}
+  }
+  dimension_group: created_at {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year, day_of_week, day_of_month]
+    sql: ${TABLE}.Fecha ;;
+  }
 
+  dimension: order_created_at_granularity {
+    description: "Use it in conjunction with Dates Granularity Filter"
+    sql:
+      {% if dates_granularity.Fecha == 'date' %} ${created_at_date}
+      {% elsif dates_granularity.Fecha == 'week' %} ${created_at_week}
+      {% elsif dates_granularity.Fecha == 'month' %} ${created_at_month}
+      {% elsif dates_granularity.Fecha == 'quarter' %} ${created_at_quarter}
+      {% elsif dates_granularity.Fecha == 'year' %} ${created_at_year}
+      {% elsif dates_granularity.Fecha == 'raw' %} ${created_at_raw}
+      {% else %} ${created_at_date}
+      {% endif %};;
+  }
 
   dimension: georeferencia {
     type: string
