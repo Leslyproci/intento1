@@ -112,8 +112,8 @@ view: biblioteca_datos {
       icon_url: "https://google.com/favicon.ico"
     }
   }
-  #imagen en internet
-  dimension: title {
+
+  dimension: title_1 {
     type: string
     sql: ${medio_de_preferenica_de_aviso} ;;
     html: <h1>Dashboard: {{rendered_value}}</h1> ;;
