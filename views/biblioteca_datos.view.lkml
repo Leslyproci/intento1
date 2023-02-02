@@ -6,9 +6,7 @@ view: biblioteca_datos {
     type: number
     sql: ${TABLE}.Anio_registro_usuario_sistema ;;
   }
-dimension: intento {
 
-}
   dimension: biblioteca_consulta {
     type: string
     sql: ${TABLE}.Biblioteca_consulta ;;
@@ -58,28 +56,27 @@ dimension: intento {
     datatype: date
     sql: ${TABLE}.Fecha ;;
   }
-  parameter: dates_granularity {
-    hidden: yes
+  parameter: date_granularity {
     type: unquoted
-    allowed_value: { label: "Date" value: "date" }
-    allowed_value: { label: "Week" value: "week" }
-    allowed_value: { label: "Month" value: "month" }
-    allowed_value: { label: "Quarter" value: "quarter" }
-    allowed_value: { label: "Year" value: "year" }
-    allowed_value: {label: "Raw" value:"raw"}
+    allowed_value: {
+      label: "Week"
+      value: "week"
+    }
+    allowed_value: {
+      label: "Month"
+      value: "month"
+    }
   }
 
-  dimension: order_created_at_granularity {
-    description: "Use it in conjunction with Dates Granularity Filter"
+  dimension: date {
     sql:
-      {% if dates_granularity.Fecha == 'date' %} ${fecha_date}
-      {% elsif dates_granularity.Fecha == 'week' %} ${fecha_week}
-      {% elsif dates_granularity.Fecha == 'month' %} ${fecha_month}
-      {% elsif dates_granularity.Fecha == 'quarter' %} ${fecha_quarter}
-      {% elsif dates_granularity.Fecha == 'year' %} ${fecha_year}
-      {% elsif dates_granularity.Fecha == 'raw' %} ${fecha_raw}
-      {% else %} ${fecha_date}
-      {% endif %};;
+    {% if date_granularity._parameter_value == 'week' %}
+      ${fecha_week}
+    {% elsif date_granularity._parameter_value == 'month' %}
+      ${fecha_month}
+    {% else %}
+      ${fecha_date}
+    {% endif %};;
   }
 
   dimension: georeferencia {
@@ -105,6 +102,21 @@ dimension: intento {
   dimension: medio_de_preferenica_de_aviso {
     type: string
     sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
+  }
+  #busque la palabra en internet
+  dimension: medio_con_link {
+    sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+      icon_url: "https://google.com/favicon.ico"
+    }
+  }
+  #imagen en internet
+  dimension: title {
+    type: string
+    sql: ${medio_de_preferenica_de_aviso} ;;
+    html: <h1>Dashboard: {{rendered_value}}</h1> ;;
   }
 
   dimension: nombre {
