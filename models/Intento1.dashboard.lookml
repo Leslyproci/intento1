@@ -1,5 +1,5 @@
 - dashboard: intento1
-  title: Bibliotecas y sus convenios interbibliotecarios
+  title: Bibliotecas y sus convenios interbibliotecarios 1
   layout: newspaper
   preferred_viewer: dashboards-next
   crossfilter_enabled: true
