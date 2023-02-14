@@ -37,6 +37,7 @@ view: biblioteca_datos {
   }
 
   dimension: codigo_universidad {
+    label: "codigo_universidad"
     type: number
     sql: ${TABLE}.Codigo_universidad ;;
   }
@@ -125,6 +126,7 @@ view: biblioteca_datos {
   }
 
   dimension: nombre {
+    label: "nombre"
     type: string
     sql: ${TABLE}.Nombre ;;
   }
