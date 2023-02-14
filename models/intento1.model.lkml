@@ -22,8 +22,8 @@ explore: biblioteca_datos {
   #}
 }
 
-explore: datos_biblioteca {}
+#explore: datos_biblioteca {}
 
-explore: datos {}
+#explore: datos {}
 
-explore: lugar_de_los_datos {}
+#explore: lugar_de_los_datos {}
