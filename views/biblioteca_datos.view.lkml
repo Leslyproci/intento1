@@ -3,21 +3,25 @@ view: biblioteca_datos {
     ;;
 
   dimension: anio_registro_usuario_sistema {
+    label: "anio_registro_usuario_sistema"
     type: number
     sql: ${TABLE}.Anio_registro_usuario_sistema ;;
   }
 
   dimension: biblioteca_consulta {
+    label: "biblioteca_consulta"
     type: string
     sql: ${TABLE}.Biblioteca_consulta ;;
   }
 
   dimension: cantidad_consultas {
+    label: "cantidad_consultas"
     type: number
     sql: ${TABLE}.Cantidad_consultas ;;
   }
 
   dimension: codigo_biblioteca {
+    label: "codigo_biblioteca"
     type: string
     sql: ${TABLE}.Codigo_biblioteca ;;
   }
@@ -38,6 +42,7 @@ view: biblioteca_datos {
   }
 
   dimension: departamento {
+    label: "departamento"
     type: string
     sql: ${TABLE}.Departamento ;;
   }
