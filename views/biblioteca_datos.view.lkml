@@ -109,14 +109,14 @@ view: biblioteca_datos {
     type: string
     sql: ${TABLE}.Medio_de_preferenica_de_aviso;;
   }
-  dimension: aviso_por_email {
-    label: "Aviso por email"
-    type: string
-    sql: WHEN ${codigo_de_preferencia_de_aviso} = 'a' THEN '{{ _localization['impreso'] }}'
-         WHEN ${codigo_de_preferencia_de_aviso} = 'p' THEN '{{ _localization['mensaje texto'] }}'
-         ELSE '{{ _localization['email'] }}'
-         END ;;
-  }
+ # dimension: aviso_por_email {
+  #  label: "Aviso por email"
+  #  type: string
+  #  sql: WHEN ${codigo_de_preferencia_de_aviso} = 'a' THEN '{{ _localization['impreso'] }}'
+   #      WHEN ${codigo_de_preferencia_de_aviso} = 'p' THEN '{{ _localization['mensaje texto'] }}'
+    #     ELSE '{{ _localization['email'] }}'
+     #    END ;;
+  #}
   #busque la palabra en internet
   dimension: medio_con_link {
     label: "Link medio"
