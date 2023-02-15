@@ -29,10 +29,11 @@ view: biblioteca_datos {
   #  sql: ${TABLE}.Codigo_biblioteca_1 ;;
   # }
 
- # dimension: codigo_de_preferencia_de_aviso {
-   # type: string
-    #sql: ${TABLE}.Codigo_de_preferencia_de_aviso ;;
-  #}
+ dimension: codigo_de_preferencia_de_aviso {
+    label: "Codigo aviso"
+    type: string
+    sql: ${TABLE}.Codigo_de_preferencia_de_aviso ;;
+  }
 
   dimension: codigo_universidad {
     label: "codigo_universidad"
@@ -103,10 +104,15 @@ view: biblioteca_datos {
     sql: ${TABLE}.Longitud ;;
   }
 
- # dimension: medio_de_preferenica_de_aviso {
-   # type: string
-    #sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
-  #}
+  dimension: medio_de_preferenica_de_aviso {
+    label: "Medio aviso"
+    type: string
+    sql: CASE
+         WHEN ${TABLE}.Medio_de_preferenica_de_aviso = 'impreso' THEN '{{ _localization['printed'] }}'
+         WHEN ${TABLE}.Medio_de_preferenica_de_aviso = 'mensaje texto' THEN '{{ _localization['Text message'] }}'
+         ELSE '{{ _localization['email'] }}'
+         END;;
+  }
   #busque la palabra en internet
   dimension: medio_con_link {
     label: "Link medio"

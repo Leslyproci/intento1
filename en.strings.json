@@ -4,5 +4,10 @@
   "Nombre": "Name",
   "biblioteca_consulta": "Library inquiries",
   "Universidad": "University",
-  "Link medio" : "Link"
+  "Link medio" : "Link",
+  "Medio aviso":"warning",
+  "Codigo aviso":"Warning code",
+  "impreso":"printed",
+  "email": "email",
+  "mensaje texto" : "Text message "
 }
