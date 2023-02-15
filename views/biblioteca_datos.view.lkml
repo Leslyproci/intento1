@@ -3,7 +3,6 @@ view: biblioteca_datos {
     ;;
 
   dimension: anio_registro_usuario_sistema {
-    label: "anio_registro_usuario_sistema"
     type: number
     sql: ${TABLE}.Anio_registro_usuario_sistema ;;
   }
@@ -15,7 +14,6 @@ view: biblioteca_datos {
   }
 
   dimension: cantidad_consultas {
-    label: "cantidad_consultas"
     type: number
     sql: ${TABLE}.Cantidad_consultas ;;
   }
@@ -111,6 +109,7 @@ view: biblioteca_datos {
   #}
   #busque la palabra en internet
   dimension: medio_con_link {
+    label: "Link medio"
     sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
     link: {
       label: "Google"
