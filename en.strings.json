@@ -9,5 +9,6 @@
   "Codigo aviso":"Warning code",
   "impreso":"printed",
   "email": "email",
-  "mensaje texto" : "Text message "
+  "mensaje texto" : "Text message ",
+  "Aviso por email": "email warning"
 }

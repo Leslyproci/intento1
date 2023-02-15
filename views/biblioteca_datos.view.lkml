@@ -107,11 +107,15 @@ view: biblioteca_datos {
   dimension: medio_de_preferenica_de_aviso {
     label: "Medio aviso"
     type: string
-    sql: CASE
-         WHEN ${TABLE}.Medio_de_preferenica_de_aviso = 'impreso' THEN '{{ _localization['printed'] }}'
-         WHEN ${TABLE}.Medio_de_preferenica_de_aviso = 'mensaje texto' THEN '{{ _localization['Text message'] }}'
+    sql: ${TABLE}.Medio_de_preferenica_de_aviso;;
+  }
+  dimension: aviso_por_email {
+    label: "Aviso por email"
+    type: string
+    sql: WHEN ${medio_de_preferenica_de_aviso} = 'impreso' THEN '{{ _localization['impreso'] }}'
+         WHEN ${medio_de_preferenica_de_aviso} = 'mensaje texto' THEN '{{ _localization['mensaje texto'] }}'
          ELSE '{{ _localization['email'] }}'
-         END;;
+         END ;;
   }
   #busque la palabra en internet
   dimension: medio_con_link {
