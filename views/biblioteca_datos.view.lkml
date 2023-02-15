@@ -112,8 +112,8 @@ view: biblioteca_datos {
   dimension: aviso_por_email {
     label: "Aviso por email"
     type: string
-    sql: WHEN ${medio_de_preferenica_de_aviso} = 'impreso' THEN '{{ _localization['impreso'] }}'
-         WHEN ${medio_de_preferenica_de_aviso} = 'mensaje texto' THEN '{{ _localization['mensaje texto'] }}'
+    sql: WHEN ${codigo_de_preferencia_de_aviso} = 'a' THEN '{{ _localization['impreso'] }}'
+         WHEN ${codigo_de_preferencia_de_aviso} = 'p' THEN '{{ _localization['mensaje texto'] }}'
          ELSE '{{ _localization['email'] }}'
          END ;;
   }
