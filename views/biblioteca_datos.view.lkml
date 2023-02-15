@@ -21,20 +21,20 @@ view: biblioteca_datos {
   }
 
   dimension: codigo_biblioteca {
-    label: "codigo_biblioteca"
+    label: "Codigo biblioteca"
     type: string
     sql: ${TABLE}.Codigo_biblioteca ;;
   }
 
-  dimension: codigo_biblioteca_1 {
-    type: string
-    sql: ${TABLE}.Codigo_biblioteca_1 ;;
-  }
+ # dimension: codigo_biblioteca_1 {
+ #   type: string
+  #  sql: ${TABLE}.Codigo_biblioteca_1 ;;
+  # }
 
-  dimension: codigo_de_preferencia_de_aviso {
-    type: string
-    sql: ${TABLE}.Codigo_de_preferencia_de_aviso ;;
-  }
+ # dimension: codigo_de_preferencia_de_aviso {
+   # type: string
+    #sql: ${TABLE}.Codigo_de_preferencia_de_aviso ;;
+  #}
 
   dimension: codigo_universidad {
     label: "codigo_universidad"
@@ -43,9 +43,9 @@ view: biblioteca_datos {
   }
 
   dimension: departamento {
-    label: "departamento"
-    type: string
-    sql: ${TABLE}.Departamento ;;
+   label: "Departamento"
+   type: string
+   sql: ${TABLE}.Departamento ;;
   }
 
   dimension_group: fecha {
@@ -85,10 +85,10 @@ view: biblioteca_datos {
     {% endif %};;
   }
 
-  dimension: georeferencia {
-    type: string
-    sql: ${TABLE}.Georeferencia ;;
-  }
+  #dimension: georeferencia {
+   # type: string
+  #  sql: ${TABLE}.Georeferencia ;;
+  #}
 
   dimension: item {
     type: number
@@ -105,10 +105,10 @@ view: biblioteca_datos {
     sql: ${TABLE}.Longitud ;;
   }
 
-  dimension: medio_de_preferenica_de_aviso {
-    type: string
-    sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
-  }
+ # dimension: medio_de_preferenica_de_aviso {
+   # type: string
+    #sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
+  #}
   #busque la palabra en internet
   dimension: medio_con_link {
     sql: ${TABLE}.Medio_de_preferenica_de_aviso ;;
@@ -119,22 +119,22 @@ view: biblioteca_datos {
     }
   }
 
-  dimension: title_1 {
-    type: string
-    sql: ${medio_de_preferenica_de_aviso} ;;
-    html: <h1>Dashboard: {{rendered_value}}</h1> ;;
-  }
+ # dimension: title_1 {
+  #  type: string
+   # sql: ${medio_de_preferenica_de_aviso} ;;
+   # html: <h1>Dashboard: {{rendered_value}}</h1> ;;
+  #}
 
   dimension: nombre {
-    label: "nombre"
+    label: "Nombre"
     type: string
     sql: ${TABLE}.Nombre ;;
   }
 
-  dimension: proporciono_direccion_de_correo {
-    type: string
-    sql: ${TABLE}.Proporciono_direccion_de_correo ;;
-  }
+  #dimension: proporciono_direccion_de_correo {
+   # type: string
+  #  sql: ${TABLE}.Proporciono_direccion_de_correo ;;
+  #}
 
   dimension: reservas_totales {
     type: number
@@ -142,6 +142,7 @@ view: biblioteca_datos {
   }
 
   dimension: universidad {
+    label: "Universidad"
     type: string
     sql: ${TABLE}.Universidad ;;
   }
