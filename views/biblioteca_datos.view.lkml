@@ -49,11 +49,21 @@ view: biblioteca_datos {
 
   dimension_group: fecha {
     type: time
+    view_label: "_PoP"
     timeframes: [
       raw,
+      time,
+      hour_of_day,
       date,
+      day_of_week,
+      day_of_week_index,
+      day_of_month,
+      day_of_year,
       week,
+      week_of_year,
       month,
+      month_name,
+      month_num,
       quarter,
       year
     ]
